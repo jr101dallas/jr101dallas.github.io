@@ -5,3 +5,5 @@ Make a user website on github pages.
 * Choose a theme -- tactile
 * Change build folder /docs
 * Create /docs folder and this README.md
+
+[Copyright](/LICENSE.html)
