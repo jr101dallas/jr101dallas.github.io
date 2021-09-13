@@ -15,7 +15,8 @@ Make a user website on github pages.
 * Move useful links from Welcome to Jekyll into readme for breadcrumb
 * Implement the posts page from the Jekyll docs
 * Mess about with ```--future``` and ```--drafts``` arguments.
-* Fiddle with layout for posts not showing author
+* TODO: Fiddle with layout for posts not showing author
+* TODO: Troubleshoot local render difference from github render, missing navbar
 
 [First Post](/jekyll/restarting/2021/09/12/following-breadcrumbs.html)  
 [Copyright](/LICENSE.html)  
