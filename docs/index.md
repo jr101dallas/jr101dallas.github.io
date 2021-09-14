@@ -16,9 +16,9 @@ Make a user website on github pages.
 * Implement the posts page from the Jekyll docs
 * Mess about with ```--future``` and ```--drafts``` arguments.
 * TODO: Fiddle with layout for posts not showing author
-* TODO: Troubleshoot local render difference from github render, missing navbar
+* Troubleshoot local render difference from github render, missing navbar [solution here](/github-pages-types)
 
-[First Post](/jekyll/restarting/2021/09/12/following-breadcrumbs.html)  
+[Posts](/about/)  
 [Copyright](/LICENSE.html)  
 [About](/about/)  
 [Error Page](404.html)  
