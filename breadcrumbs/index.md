@@ -6,7 +6,7 @@ title:  "Breadcrumbs"
 # Breadcrumb Strategy
 This is my example and working breadcrumbs page. It's public so that you can see what's going on and so you can see the kinds of things I really put in my breadcrumbs instead of something faked or mocked.
 
-Breadcrumbs are my way of getting back to where I need to be after having been distracted (perpetually) or really sidetracked, as I was for nine months before finally getting back to this project. When I did come back, these digital breadcrumbs were sitting in my repository, checked in, versioned in case I ever need to look back, and reasonably safe from birds. I also talk more about [Following Breadcrumbs](following-breadcrumbs) if you're curious.
+Breadcrumbs are my way of getting back to where I need to be after having been distracted (perpetually) or really sidetracked, as I was for nine months before finally getting back to this project. When I did come back, these digital breadcrumbs were sitting in my repository, checked in, versioned in case I ever need to look back, and reasonably safe from birds. I also talk more about [Following Breadcrumbs](/following-breadcrumbs) if you're curious.
 
 ## Bookmark TODO
 Stuff that I know I need to do and actually wrote down, instead of investigating GitHub Issues or setting up Jira.
