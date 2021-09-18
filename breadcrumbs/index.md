@@ -12,6 +12,7 @@ Breadcrumbs are my way of getting back to where I need to be after having been d
 Stuff that I know I need to do and actually wrote down, instead of investigating GitHub Issues or setting up Jira.
 * TODO: Fiddle with layout for posts not showing author
 * TODO: Figure out spelling and grammar checking, I'm honest enough to know I need it and vain enough to want to look good, professional, call it professional
+* TODO: Post template is doubled up for the page title, triple if the page title and the first header are the same
 
 ## Journey Changelog
 How I got [here](/breadcrumbs/journey.html).
