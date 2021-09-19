@@ -6,5 +6,7 @@
   link: /posts/
 - name: Breadcrumbs
   link: /breadcrumbs/
+- name: Roguelike Tutorial
+  link: /roguelike-tutorial/
 - name: About
   link: /about/
