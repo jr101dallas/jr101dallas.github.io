@@ -1,7 +1,5 @@
 - name: Home
   link: /
-- name: Docs
-  link: /docs/
 - name: Posts
   link: /posts/
 - name: Breadcrumbs
