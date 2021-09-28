@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Solution Is Born"
-date:   2021-09-24 08:23:12 -0600
+date:   2021-09-24 08:23:12 +0000
 ---
 
 # Well Begun

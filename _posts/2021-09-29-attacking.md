@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Attacking"
-date:   2021-09-29 13:16:28 -0600
+date:   2021-09-29 13:16:28 +0000
 ---
 
 # Code!

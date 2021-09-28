@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Requirements"
-date:   2021-09-26 16:07:11 -0600
+date:   2021-09-26 16:07:11 +0000
 ---
 
 # Planning Again

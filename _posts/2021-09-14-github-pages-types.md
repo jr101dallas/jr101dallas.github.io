@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "GitHub Pages Types"
-date:   2021-09-14 09:35:11 -0600
+date:   2021-09-14 09:35:11 +0000
 permalink:  github-pages-types
 ---
 

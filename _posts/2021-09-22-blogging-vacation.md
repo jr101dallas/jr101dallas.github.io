@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Blogging On Vacation"
-date:   2021-09-22 22:59:53 -0600
+date:   2021-09-22 22:59:53 +0000
 ---
 
 # Looking Ahead

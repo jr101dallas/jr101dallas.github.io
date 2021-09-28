@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Project Layout"
-date:   2021-09-27 11:10:19 -0600
+date:   2021-09-27 11:10:19 +0000
 ---
 
 # Requirements to Organization

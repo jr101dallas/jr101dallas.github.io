@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Reorganizing"
-date:   2021-09-16 10:18:09 -0600
+date:   2021-09-16 10:18:09 +0000
 ---
 
 # Untangling

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Following Breadcrumbs"
-date:   2021-09-12 15:27:12 -0600
+date:   2021-09-12 15:27:12 +0000
 permalink:  following-breadcrumbs
 ---
 

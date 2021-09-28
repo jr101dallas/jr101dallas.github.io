@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fast Start"
-date:   2021-09-28 21:09:53 -0600
+date:   2021-09-28 11:09:53 +0000
 ---
 
 # Coding
