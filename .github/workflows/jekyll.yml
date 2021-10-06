@@ -17,3 +17,4 @@ jobs:
         with:
           token: ${{ secrets.ACTION_TOKEN }}
           target_branch: 'gh-pages'
+          keep_history: true

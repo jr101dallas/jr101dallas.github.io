@@ -28,6 +28,7 @@ github_username:  jr101dallas
 repository: jr101dallas/jr101dallas.github.io
 author:  jr101dallas
 future: false
+keep_files: [.git, CNAME]
 
 # Build settings
 theme: jekyll-theme-tactile
