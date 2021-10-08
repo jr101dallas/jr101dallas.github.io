@@ -10,11 +10,11 @@ Breadcrumbs are my way of getting back to where I need to be after having been d
 
 ## Bookmark TODO
 Stuff that I know I need to do and actually wrote down, instead of investigating GitHub Issues or setting up Jira.
-* TODO: Fiddle with layout for posts not showing author
 * TODO: Figure out spelling and grammar checking, I'm honest enough to know I need it and vain enough to want to look good, professional, call it professional
-* TODO: Post template is doubled up for the page title, triple if the page title and the first header are the same
-* TODO: add dates to the Posts page
-* TODO: link up the main navbar from the User Pages to get the same feel and features in the project pages
+* TODO: navbar styling for multi-word links is unclear that it's a single entry and spacing is a little tight
+* TODO: summarize CI/CD ramble posts into a decent how-to on setting thigs up
+* TODO: tag posts as I pull together summaries
+* TODO: plan steps on Roguelike Tutorial
 
 ## Journey Changelog
 How I got [here](/breadcrumbs/journey.html).
