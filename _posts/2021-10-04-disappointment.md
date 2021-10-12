@@ -15,10 +15,12 @@ I've also taken the opportunity to stop and test whether I can properly add imag
 Now a little save, ```bundle exec jekyll serve``` and we'll know for sure. You can hold your breath, I won't finish this post before I have it working... probably.  
 
 ## Crash and Recover
-It wasn't quite as easy as I had hoped, possibly because of the theme I've chosen. It sounds like some themes may be a little more full featured than others. But, with some reseach and mangling together of [things](https://stackoverflow.com/questions/54157109/how-to-render-background-image-in-a-page-generated-by-jekyll/54166941), I've got a workable solution. The link got me what I needed to know about the proper html, and the right placement in my posts layout, and the switch to ```page.background``` possibly poorly named, was my addition to my front matter. That way, a post that needs no picture, or a different one, doesn't have to suffer sameness. I may have to do some research on small images....
+It wasn't quite as easy as I had hoped, possibly because of the theme I've chosen. It sounds like some themes may be a little more full featured than others. But, with some reseach and mangling together of [things][image], I've got a workable solution. The link got me what I needed to know about the proper html, and the right placement in my posts layout, and the switch to ```page.background``` possibly poorly named, was my addition to my front matter. That way, a post that needs no picture, or a different one, doesn't have to suffer sameness. I may have to do some research on small images....
 
 ``` html
 <div class="hero">
   <img class="feature-img" src="{{ page.background | relative_url }}" />
 </div>
 ```
+
+[image]: https://stackoverflow.com/questions/54157109/how-to-render-background-image-in-a-page-generated-by-jekyll/54166941

@@ -5,10 +5,10 @@ date:   2021-10-10 09:11:34 +0000
 ---
 
 # Sidetracked
-After following the rabbit hole on getting my minimal CI/CD working, now I need to pick up the thread on my real coding. Lets see what I left myself for [breadcrumbs](https://assumeforsimplicity.com/breadcrumbs/).  
+After following the rabbit hole on getting my minimal CI/CD working, now I need to pick up the thread on my real coding. Lets see what I left myself for [breadcrumbs](/breadcrumbs/).  
 
 ## Lists
-Looks like somewhere along the line I fixed the problem with the Author not showing on posts. Cross that one off! Same thing with Dates on the Posts page, and with not doubling the titles for the posts. Good. The navbar looks reasonably seamless between the project page [Roguelike Tutorial](https://assumeforsimplicity.com/roguelike-tutorial/) and everything else. I'm not totally thrilled with the styling on the navbar, so I think I'll add that to my breadcrumbs but I don't want to mess with it right now.  
+Looks like somewhere along the line I fixed the problem with the Author not showing on posts. Cross that one off! Same thing with Dates on the Posts page, and with not doubling the titles for the posts. Good. The navbar looks reasonably seamless between the project page [Roguelike Tutorial](/roguelike-tutorial/) and everything else. I'm not totally thrilled with the styling on the navbar, so I think I'll add that to my breadcrumbs but I don't want to mess with it right now.  
 
 Spelling and grammar checking... Ha. Not now. Besides, I can just write or copy/paste into a word processor and do that if I get more concerned about it.  
 

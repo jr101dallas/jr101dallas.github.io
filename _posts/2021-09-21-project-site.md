@@ -7,7 +7,7 @@ tags: tutorial project-pages
 ---
 
 # Relatively Painless
-The Roguelike Tutorial site is up! Hopefully, it looks pretty seamless with [assumeforsimplicity.com](afs), not that either one is a work of art at this stage, but the theme, and the navbar, etc. should be up and working.  
+The Roguelike Tutorial site is up! Hopefully, it looks pretty seamless with [assumeforsimplicity.com][afs], not that either one is a work of art at this stage, but the theme, and the navbar, etc. should be up and working.  
 
 ## GitHub Project Pages
 The configuration for the repository in Settings > Pages was pretty painless. Once I got the repository configured, the Pages setion announced at the top that the site is published at http://assumeforsimplicity.com/roguelike-tutorial/ so I set up the build to pull the page source from the ```main``` branch and the ```/docs``` folder. This time, since I'd already learned a bit about this setting from making mistakes in setting up my GitHub Pages User page, I knew where I was headed. I had sort of hoped that the project page would magically inherit from the User page but it didn't and it wasn't really a big deal to copy over the infrastructure files to get things matched up.  

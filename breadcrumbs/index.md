@@ -16,6 +16,7 @@ Stuff that I know I need to do and actually wrote down, instead of investigating
 * TODO: tag posts as I pull together summaries
 * TODO: plan steps on Roguelike Tutorial
 * TODO: browse for preventing problems https://blog.webjeda.com/tags/
+* TODO: category pages once scanning posts is done
 
 ## Journey Changelog
 How I got [here](/breadcrumbs/journey.html).
