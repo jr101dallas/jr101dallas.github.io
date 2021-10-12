@@ -15,6 +15,7 @@ Stuff that I know I need to do and actually wrote down, instead of investigating
 * TODO: summarize CI/CD ramble posts into a decent how-to on setting thigs up
 * TODO: tag posts as I pull together summaries
 * TODO: plan steps on Roguelike Tutorial
+* TODO: browse for preventing problems https://blog.webjeda.com/tags/
 
 ## Journey Changelog
 How I got [here](/breadcrumbs/journey.html).

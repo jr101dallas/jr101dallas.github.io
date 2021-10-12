@@ -1,8 +1,8 @@
-# jr101dallas.github.io repository README.md
-If you're viewing this page you're either:  
-* running Jekyll locally ```bundle exec jekyll serve``` and looking for [/docs/](http://127.0.0.1:4000/docs/)  
-***OR***
-* You're viewing the repository code on github.
+# jr101dallas.github.io
+Repository README.md
+* View live site at https://assumeforsimplicity.com  
+* Run Jekyll locally ```bundle exec jekyll serve``` from repository root and browse http://127.0.0.1:4000/  
+* Website home page is ```/index.md``` in the repository, this README.md is only the home page in the GitHub repository https://github.com/jr101dallas/jr101dallas.github.io
 
 ## Notes
 You probably want the switches ```--future --drafts```
