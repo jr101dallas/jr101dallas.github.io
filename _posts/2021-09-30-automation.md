@@ -2,10 +2,12 @@
 layout: post
 title:  "Automation"
 date:   2021-09-30 11:29:59 +0000
+category: website
+tags: workflow pages github vacation procrastinate
 ---
 
 # GitHub Actions
-It's time to see if I can get the code running that [Sean Killeen][sean-killeen] posted about. I'm thinking that I'm about to have a pause in my regular time blocks that I've been using on this project, so having the actions running regularly to publish the formerly future posts would be advantageous.
+It's time to see if I can get the code running that [Sean Killeen][sean-killeen] posted about. I'm thinking that I'm about to have a pause in my regular time blocks that I've been using on this project, so having the actions running regularly to publish the formerly future posts would be advantageous.  
 
 ## So...actually
 When I save myself a breadcrumb like this, I know that a solution exists, and I just keep working on whatever I'm busy with until something actually catches fire. Being that I now have some smoke, I went back to the solution I knew existed and took a look. Like frequently happens, I've had some time to think and I took another shot at searching. I found some interesting things.  

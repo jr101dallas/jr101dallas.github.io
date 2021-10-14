@@ -2,10 +2,12 @@
 layout: post
 title:  "Workflow"
 date:   2021-10-03 09:11:34 +0000
+category: website
+tags: workflow actions repository author
 ---
 
 # Progress?
-Well, at least I know my workflow in DitHub Actions is triggering now. I went to look at the logging and found that the build was failing with an error.  
+Well, at least I know my workflow in GitHub Actions is triggering now. I went to look at the logging and found that the build was failing with an error.  
 
 "No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configuration, or set up an 'origin' git remote pointing to your github.com repository."  
 
