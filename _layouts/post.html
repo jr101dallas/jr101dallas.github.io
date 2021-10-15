@@ -1,9 +1,8 @@
 ---
 layout: default
 ---
-<h1 style="background-image: url('{{ site.baseurl }}/assets/GitHubActionsGreen.png');"></h1>
 <p class="view">{{ page.date | date: "%-d %B %Y" }} by {{ page.author | default: site.author }}</p>
-
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
 {% if page.background %}
 <div class="hero">
   <img class="feature-img" src="{{ page.background | relative_url }}" />

@@ -2,6 +2,8 @@
 layout: post
 title:  "Tags Review"
 date:   2021-10-11 09:11:34 +0000
+category: website
+tags: jekyll category tags
 ---
 
 # Looking Back
