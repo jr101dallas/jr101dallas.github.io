@@ -2,6 +2,7 @@
 layout: post
 title:  "Website Notes"
 date:   2021-10-16 09:11:34 +0000
+permalink: permalink/website-setup
 category: website
 tags: plan tutorial breadcrumbs
 ---
