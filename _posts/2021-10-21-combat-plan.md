@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Combat Plan"
-date:   2021-10-20 09:11:34 +0000
+date:   2021-10-21 09:11:34 +0000
 category: roguelike
 tags: plan component combat
 ---
