@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Entity Fsctory"
+title:  "Entity Factory"
 date:   2021-10-24 09:11:34 +0000
 category: roguelike
 tags: code entity factory
