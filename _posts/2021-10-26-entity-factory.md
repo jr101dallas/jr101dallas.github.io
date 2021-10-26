@@ -37,4 +37,38 @@ I've expanded on the ```Hello World!``` and that required the ```const``` and ``
 I've also instantiated Universe.  
 
 ## Entity Factory
-Now I have a place for Entity Factory to list all the instances it creates. Getting an instance alone, in our case, wasn't good enough because we need to know when the instance should no longer exist and eventually when we tie in display when it should no longer be rendered or referenced.  
+Now I have a place for entities to live after EntityFactory spits them out. Getting an instance alone, in our case, wasn't good enough because we need to know when the instance should no longer exist and eventually when we tie in display when it should no longer be rendered or referenced.  
+
+Speaking of EntityFactory, it's dead simple right now while there aren't any Components on Entity to differentiate between them. Universe has all the information, so calling ```GetEntity()``` on Universe makes sense and EntityFactory can just handle the Entity type logic.
+
+``` csharp
+    public class EntityFactory
+    {
+        public Entity GetEntity(int lastEntityId)
+        {
+            return new Entity(){
+                Id = ++lastEntityId
+            };
+        }
+    }
+
+    public class Universe
+    {
+        public SortedList<int, IEntity> entities = new SortedList<int, IEntity>();
+
+        public int LastEntityId()
+        {
+            if(entities.Count == 0) return 0;
+
+            return entities.Max().Key;
+        }        
+
+        public Entity GetEntity()
+        {
+            var ef = new EntityFactory();
+            var entity = ef.GetEntity(LastEntityId());
+            entities.Add(entity.Id, entity);
+            return entity;
+        }
+    }
+```
