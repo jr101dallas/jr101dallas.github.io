@@ -21,7 +21,7 @@ Listing out some things that I think I'll end up wanting to have happen in the g
 * innate permanent bonuses  
 
 ## Simmering
-I'll let that list simmer for a bit and see if I think of anything else that I need to plan ahead on. In the meantime I probably also need to come up with a list of other things that I need to have in components because it will help me figure out what belonds in which component. For instance:  
+I'll let that list simmer for a bit and see if I think of anything else that I need to plan ahead on. In the meantime I probably also need to come up with a list of other things that I need to have in components because it will help me figure out what belongs in which component. For instance:  
 
 * combat, as above
 * inventory
