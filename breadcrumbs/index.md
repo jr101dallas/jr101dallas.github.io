@@ -8,6 +8,9 @@ This is my example and working breadcrumbs page. It's public so that you can see
 
 Breadcrumbs are my way of getting back to where I need to be after having been distracted (perpetually) or really sidetracked, as I was for nine months before finally getting back to this project. When I did come back, these digital breadcrumbs were sitting in my repository, checked in, versioned in case I ever need to look back, and reasonably safe from birds. I also talk more about [Following Breadcrumbs](/following-breadcrumbs) if you're curious.
 
+## GitHub Repo
+New or lost or just can't remember, the [GitHub repo is here](https://github.com/jr101dallas/jr101dallas.github.io)
+
 ## Bookmark TODO
 Stuff that I know I need to do and actually wrote down, instead of investigating GitHub Issues or setting up Jira.
 * TODO: Figure out spelling and grammar checking, I'm honest enough to know I need it and vain enough to want to look good, professional, call it professional
