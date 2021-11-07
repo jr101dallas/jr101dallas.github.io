@@ -105,7 +105,7 @@ And now my test randomly fails!
         }
 ```
 
-Well, the expected result is good even if it means there's more work dtill to be done that I hadn't worked into my planning steps. So now the last thing is to work in using the BaseAim from the Component.  
+Well, the expected result is good even if it means there's more work still to be done that I hadn't worked into my planning steps. So now the last thing is to work in using the BaseAim from the Component.  
 
 ``` csharp
         public void TargetEntity(Entity originEntity, Entity targetEntity)

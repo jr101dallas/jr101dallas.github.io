@@ -15,7 +15,7 @@ It needs to be reworded a little for clarity.
 
 - an IItem instance with an additional interface that exposes access to a bonus int for Aim/Target calculations, initially defaulting an instance in every created Inventory
 
-The rewording make more clear the involved strategy of the interfaces. I may end up with "Socks of Pussiant Aim +8" eventually. Things that aren't just weapons may eventually make their way into the group of things that add bonuses. That means if I'm inheriting classes all the time I could end up in a blind alley and have to copy bonus code around. If I go with an interface, anything could implement the interface and get swept normally into the same code path.  
+The rewording makes more clear the involved strategy of the interfaces. I may end up with "Socks of Pussiant Aim +8" eventually. Things that aren't just weapons may eventually make their way into the group of things that add bonuses. That means if I'm inheriting classes all the time I could end up in a blind alley and have to copy bonus code around. If I go with an interface, anything could implement the interface and get swept normally into the same code path.  
 
 ## Steps
 With the rephrasing, I can start working out steps I'm going to take to get the whole thing going.  
