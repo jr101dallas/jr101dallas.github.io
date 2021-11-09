@@ -16,13 +16,7 @@ Stuff that I know I need to do and actually wrote down, instead of investigating
 * TODO: Figure out spelling and grammar checking, I'm honest enough to know I need it and vain enough to want to look good, professional, call it professional
 * TODO: navbar styling for multi-word links is unclear that it's a single entry and spacing is a little tight
 * TODO: summarize CI/CD ramble posts into a decent how-to on setting thigs up
-* TODO: tag posts as I pull together summaries
-* TODO: plan steps on Roguelike Tutorial
 * TODO: browse for preventing problems https://blog.webjeda.com/tags/
-* TODO: category pages once scanning posts is done
-
-## Journey Changelog
-How I got [here](/breadcrumbs/journey.html).
 
 ## Quickstart Notes if you kinda Remember
 Static site in Jekyll, if you're viewing this page you're either:  

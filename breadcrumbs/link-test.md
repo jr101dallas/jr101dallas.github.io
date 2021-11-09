@@ -6,7 +6,6 @@ Here are some test links:
 1. [readme](readme)
 1. [posts](posts)
 1. [breadcrumb index](breadcrumbs-index)
-1. [breadcrumb journey](breadcrumbs-journey)
 1. [breadcrumb link test](breadcrumbs-link-test)
 
 [404](404.html)
@@ -16,5 +15,4 @@ Here are some test links:
 [readme](readme.html)
 [posts](/posts/)
 [breadcrumbs-index](/breadcrumbs/)
-[breadcrumbs-journey](/breadcrumbs/journey/html)
 [breadcrumbs-link-test](/breadcrumbs/link-test.html)

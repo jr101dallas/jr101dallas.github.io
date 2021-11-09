@@ -20,6 +20,4 @@ Along the way, I'm jabbering my way through my work in the [blog](/posts/) and r
 ## Organization
 See [Breadcrumbs](/breadcrumbs/) if you're just trying to figure out what's supposed to be happening or [Following Breadcrumbs](/business/2021/09/12/following-breadcrumbs.html) if you want to see some blather on "What the heck? Breadcrumbs?"  
 
-See [Journey](/breadcrumbs/journey.html) if you like looking back over what it took to get here.  
-
 Or, feel free to rummage around in [Posts](/posts/) for spare change and the like.
