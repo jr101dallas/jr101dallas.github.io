@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Armor"
+title:  "Adding Models"
 date:   2021-11-17 09:11:34 +0000
 category: roguelike
 tags: code models offense
