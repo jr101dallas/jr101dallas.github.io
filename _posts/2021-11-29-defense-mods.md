@@ -95,7 +95,7 @@ There's really only one test on the model. The tests on Armor are highly paralle
 ```
 
 ## Remaining Steps
-That leave the following steps still to go.  
+That leaves the following steps still to go.  
 
 1. add a default Armor instance to Entity(Factory)
 1. add Armor case to Entity tests
