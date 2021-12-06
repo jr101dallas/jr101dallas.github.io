@@ -94,4 +94,4 @@ cross join (
 ) c(OnOrOff)
 ```
 
-Ugh! It's always the little things. I went back to the code from yesterday's post and swapped out the TINNYINT types in the DECLARE statment at the top and got the right answers. But, I guess I can solve the puzzle in either C# or SQL now.  
+Ugh! It's always the little things. I went back to the code from yesterday's post and swapped out the TINYINT types in the DECLARE statment at the top and got the right answers. But, I guess I can solve the puzzle in either C# or SQL now.  
