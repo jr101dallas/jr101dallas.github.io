@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Well Rested"
-date:   2021-12-06 17:11:34 +0000
+date:   2021-12-07 17:11:34 +0000
 category: detour
 tags: code sql fun
 ---
