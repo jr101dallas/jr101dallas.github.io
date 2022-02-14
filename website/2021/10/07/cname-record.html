@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>CNAME Record</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CNAME Record | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CNAME Record" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Limited Time I’ve been a bit frustrated with the struggle to get my CI/CD pipeline working properly, not good for morale and momentum. Eventually, I’m going to write up a good concise how-to for what I’ve done so that others hopefully won’t end up with the same problems. And now… assumeforsimplicity.com keeps breaking. 404s on the home page that are throwing me off." />
+<meta property="og:description" content="Limited Time I’ve been a bit frustrated with the struggle to get my CI/CD pipeline working properly, not good for morale and momentum. Eventually, I’m going to write up a good concise how-to for what I’ve done so that others hopefully won’t end up with the same problems. And now… assumeforsimplicity.com keeps breaking. 404s on the home page that are throwing me off." />
+<link rel="canonical" href="https://assumeforsimplicity.com/website/2021/10/07/cname-record.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/website/2021/10/07/cname-record.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-07T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CNAME Record" />
+<script type="application/ld+json">
+{"description":"Limited Time I’ve been a bit frustrated with the struggle to get my CI/CD pipeline working properly, not good for morale and momentum. Eventually, I’m going to write up a good concise how-to for what I’ve done so that others hopefully won’t end up with the same problems. And now… assumeforsimplicity.com keeps breaking. 404s on the home page that are throwing me off.","headline":"CNAME Record","dateModified":"2021-10-07T09:11:34+00:00","datePublished":"2021-10-07T09:11:34+00:00","url":"https://assumeforsimplicity.com/website/2021/10/07/cname-record.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/website/2021/10/07/cname-record.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>CNAME Record</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">7 October 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="limited-time">Limited Time</h1>
+<p>I’ve been a bit frustrated with the struggle to get my CI/CD pipeline working properly, not good for morale and momentum. Eventually, I’m going to write up a good concise how-to for what I’ve done so that others hopefully won’t end up with the same problems. And now… <code class="language-plaintext highlighter-rouge">assumeforsimplicity.com</code> keeps breaking. 404s on the home page that are throwing me off.</p>
+
+<h2 id="looking-around">Looking Around</h2>
+<p>I’ve noticed that the GitHub Pages setting for Custom Domain isn’t sticking properly. I don’t think it was complaining or resetting before when my source folder was just set to the root of the <code class="language-plaintext highlighter-rouge">main</code> branch but I haven’t gone back to experiment yet. When I originally set it up, GitHub helped me create the <code class="language-plaintext highlighter-rouge">CNAME</code> file in the root of my repo and I see that file is being propagated to my <code class="language-plaintext highlighter-rouge">gh-pages</code> branch by my GitHub Action workflow Jekyll Action. So that seems right. But, when I keep adding back my domain in the custom domain setting I was seeing a little whirl around the GitHub icon next to the setting. I didn’t pay a lot of attention to it before, but as I came to see that things were actually broken, it got my attention.</p>
+
+<p>UPDATE: The CNAME file wasn’t being propagated. It was being created new every time I reset the Custom Domain setting.</p>
+
+<h2 id="scroll-down-and-wait">Scroll Down and Wait</h2>
+<p>After a little more looking, and scrolling down and waiting, which I didn’t do before, I saw that GitHub was actually verifying, or trying to verify, my domain. Good…. But it was failing. After actually closely reading the message, it seemed to be saying I needed a <code class="language-plaintext highlighter-rouge">CNAME</code> record. That’s when I confirmed the stuff about the CNAME file above. Nope, it must not mean that. Well…. I went looking back at my domain registration on Google Domains. I knew there was a CNAME record there, but maybe. And, what I found was that was a CNAME that has to be for the internal lookup at Google. After some trial and error, I added another CNAME record for <code class="language-plaintext highlighter-rouge">*.assumeforsimplicity.com</code> to point back at <code class="language-plaintext highlighter-rouge">jr101dallas.github.io</code>. When I went back to the GitHub Pages settings again to set the Custom Domain value again, the DNS check finally came up as a green checkmark. Finally. Now, I think, I’m finally back in a momentum and good morale position. Thank goodness.</p>
+
+<p>ALSO UPDATE: GitHub recommends AGAINST the wildcard record in your domain configuration. It will allow anyone on GitHub to put up their stuff at your domain, or something like that. I saw that I’d done something wrong and undid it. The real answer is <a href="/website/2021/10/09/oh-duh.html">here</a>.</p>
+
+
+
+  <small>tags: <em>workflow</em> - <em>actions</em> - <em>pages</em> - <em>cname</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/website/2021/10/06/understanding-actions.html">&#8672;&nbsp;Understanding Actions</a>
+      
+    </p>
+    <p>
+      
+      <a href="/website/2021/10/08/rollercoaster.html">Rollercoaster&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

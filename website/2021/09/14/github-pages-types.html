@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>GitHub Pages Types</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>GitHub Pages Types | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="GitHub Pages Types" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Broken Site Moving fast and trying to get this site set up, I tripped over a detail. I’d seen that there were two types of github Pages sites, and set a configuration that I thought I wanted. I felt like I’d rather use the /docs/ subfolder than the gh-pages branch for the website source. It seemed like the right way to go." />
+<meta property="og:description" content="Broken Site Moving fast and trying to get this site set up, I tripped over a detail. I’d seen that there were two types of github Pages sites, and set a configuration that I thought I wanted. I felt like I’d rather use the /docs/ subfolder than the gh-pages branch for the website source. It seemed like the right way to go." />
+<link rel="canonical" href="https://assumeforsimplicity.com/website/2021/09/14/github-pages-types.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/website/2021/09/14/github-pages-types.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-09-14T09:35:11+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="GitHub Pages Types" />
+<script type="application/ld+json">
+{"description":"Broken Site Moving fast and trying to get this site set up, I tripped over a detail. I’d seen that there were two types of github Pages sites, and set a configuration that I thought I wanted. I felt like I’d rather use the /docs/ subfolder than the gh-pages branch for the website source. It seemed like the right way to go.","headline":"GitHub Pages Types","dateModified":"2021-09-14T09:35:11+00:00","datePublished":"2021-09-14T09:35:11+00:00","url":"https://assumeforsimplicity.com/website/2021/09/14/github-pages-types.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/website/2021/09/14/github-pages-types.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>GitHub Pages Types</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">14 September 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="broken-site">Broken Site</h1>
+<p>Moving fast and trying to get this site set up, I tripped over a detail. I’d seen that there were two types of github Pages sites, and set a configuration that I thought I wanted. I felt like I’d rather use the <code class="language-plaintext highlighter-rouge">/docs/</code> subfolder than the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch for the website source. It seemed like the right way to go.</p>
+
+<p>And then, late at night, I triumphantly push my source for my totally awesome and totally <strong>working locally</strong> site!!!</p>
+
+<p>And it doesn’t work on <a href="https://assumeforsimplicity.com">assumeforsimplicity.com</a>….</p>
+
+<p>I left myself some breadcrumbs because it was way past bedtime, and left the site broken. It hadn’t been functional before, but it was empty. Now it was broken.</p>
+<ul>
+  <li>TODO: Fiddle with layout for posts not showing author</li>
+  <li>TODO: Troubleshoot local render difference from github render, missing navbar</li>
+  <li>TODO: figure out why site is borked</li>
+</ul>
+
+<h2 id="documentation-for-pages-source">Documentation For Pages Source</h2>
+<p>Starting at the link <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#:~:text=for%20your%20organization.%22-,Types%20of%20GitHub%20Pages%20sites,-There%20are%20three">Types of GitHub Pages</a> and heading on down through the part about the <code class="language-plaintext highlighter-rouge">/docs</code> folder and the <code class="language-plaintext highlighter-rouge">CNAME</code> file is what you might need to know if your site is working correctly locally and not working on <code class="language-plaintext highlighter-rouge">&lt;username&gt;.github.io</code> and you don’t know why.</p>
+
+<p>My site is a bit muddled now with the confusion about where the source is coming from, but I think I at least know where I’m headed now.</p>
+
+<h2 id="details-for-the-interested">Details for The Interested</h2>
+<p>I’d set my GitHub repository Pages settings to <code class="language-plaintext highlighter-rouge">main</code> and <code class="language-plaintext highlighter-rouge">/docs</code> somehow conflating things. I remember part of the thought process nine months ago was that the <code class="language-plaintext highlighter-rouge">/docs</code> subfolder for the source in the <code class="language-plaintext highlighter-rouge">main</code> branch allowed me to continue following my normal git process, trunk based, rather than trying to juggle branches. Somehow, the execution of that with the tutorials on <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> got confused and what was actually published on <a href="https://assumeforsimplicity.com">assumeforsimplicity.com</a> was exactly what was in the <code class="language-plaintext highlighter-rouge">/docs</code> folder when I’d set almost everything up in the root from the tutorials. Thus, missing the <code class="language-plaintext highlighter-rouge">_includes</code> for the navigation bar and various other things.</p>
+
+<p>Possibly, I shouldn’t have included the author thing above, because I see that the poor little <code class="language-plaintext highlighter-rouge">by</code> line is still devoid of my handle, but I’ll tackle that eventually, probably after I decide which direction I’m really going, probably root I think, and straighten out my gnarled code so things work the way I expect. But for tonight it’s bedtime again.</p>
+
+
+
+
+  <small>tags: <em>github</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/business/2021/09/13/training.html">&#8672;&nbsp;Training People</a>
+      
+    </p>
+    <p>
+      
+      <a href="/business/2021/09/15/iterate.html">Iterate&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

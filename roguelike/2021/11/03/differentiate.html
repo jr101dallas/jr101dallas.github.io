@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>Differentiate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Differentiate | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Differentiate" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Story Having Entity creation, targeting, and Entity removal, is a good start to a roguelike in my opinion. However, there are a lot of things in and around targeting that differentiate one targeting attempt from another. For instance, attacking with an unwieldy rock, versus arracking with a finely balanced sword, there is an ease of targeting with a quality weapon designed for the purpose that an improvised weapon grabbed out of necessity simply doesn’t have." />
+<meta property="og:description" content="Story Having Entity creation, targeting, and Entity removal, is a good start to a roguelike in my opinion. However, there are a lot of things in and around targeting that differentiate one targeting attempt from another. For instance, attacking with an unwieldy rock, versus arracking with a finely balanced sword, there is an ease of targeting with a quality weapon designed for the purpose that an improvised weapon grabbed out of necessity simply doesn’t have." />
+<link rel="canonical" href="https://assumeforsimplicity.com/roguelike/2021/11/03/differentiate.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/roguelike/2021/11/03/differentiate.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-03T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Differentiate" />
+<script type="application/ld+json">
+{"description":"Story Having Entity creation, targeting, and Entity removal, is a good start to a roguelike in my opinion. However, there are a lot of things in and around targeting that differentiate one targeting attempt from another. For instance, attacking with an unwieldy rock, versus arracking with a finely balanced sword, there is an ease of targeting with a quality weapon designed for the purpose that an improvised weapon grabbed out of necessity simply doesn’t have.","headline":"Differentiate","dateModified":"2021-11-03T09:11:34+00:00","datePublished":"2021-11-03T09:11:34+00:00","url":"https://assumeforsimplicity.com/roguelike/2021/11/03/differentiate.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/roguelike/2021/11/03/differentiate.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>Differentiate</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">3 November 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="story">Story</h1>
+<p>Having Entity creation, targeting, and Entity removal, is a good start to a roguelike in my opinion. However, there are a lot of things in and around targeting that differentiate one targeting attempt from another. For instance, attacking with an unwieldy rock, versus arracking with a finely balanced sword, there is an ease of targeting with a quality weapon designed for the purpose that an improvised weapon grabbed out of necessity simply doesn’t have.</p>
+
+<h2 id="inventory">Inventory</h2>
+<p>If we’re talking about what in game terms are bonuses or penalties to targeting, based on what is being used to attack, then we’re talking about involving inventory at least. We’re also talking about some kind of value representing how well an Entity can attack, and modifiers to that value according to items in inventory. Breaking it down further, I’m thinking that it’s going to look something like this:</p>
+
+<ul>
+  <li>actually adding Component instances to Entity instances</li>
+  <li>a Component for base targeting ability, plus at least a total of bonuses and penalties</li>
+  <li>a definition of some kind for an Item</li>
+  <li>a Component for a list of Items</li>
+  <li>some way for adding and removing Item instances from Inventory</li>
+  <li>an interface on some kind of Item that identifies it as having targeting bonuses or penalties</li>
+  <li>additional logic in Target that uses the targeting ability for determining success or failure</li>
+</ul>
+
+<h2 id="ordering">Ordering</h2>
+<p>To make smaller chunks of work, I think I can break this into four tasks and I’m planning on tackling them in the following order.</p>
+
+<ol>
+  <li>a Component with a base targeting value, initially added by default to all Entity instances with the same value and used for determining success in Target</li>
+  <li>a Component with a list of Item instances, initially added by default to all Entity instances with the same Item</li>
+  <li>an Item instance that has an interface that adds a bonus to the success chance calculation in Target, initially defaulting an instance in every created inventory</li>
+  <li>adding and removing Items from Inventory</li>
+</ol>
+
+<p>Trying to keep these really small and streamlined will be a little tough. I’m already thinking things like, “and add all the announcements to show in Watcher” or “create ten different Item instances for different weapons.” Quick and simple is the name of the game. Completing small chunks that I finish quickly and check in. Capturing progress.</p>
+
+
+
+  <small>tags: <em>code</em> - <em>plan</em> - <em>inventory</em> - <em>component</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/roguelike/2021/11/02/planning-target.html">&#8672;&nbsp;Back to Planning</a>
+      
+    </p>
+    <p>
+      
+      <a href="/roguelike/2021/11/04/aim-component.html">Aim Component&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

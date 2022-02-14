@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>New Puzzle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>New Puzzle | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="New Puzzle" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hooked I admit, I’m having fun with these puzzles. This one looks a little different on the surface. In fact, at first glance, I’m wondering if I can just do the bitwise operations and have it come out right. I don’t use bitwise operations much so I need to go look it up, but also, I’m a little suspicious about what the twist is going to be for the second puzzle. If the second puzzle goes from binary to ternary, or something else odd, then I’ll be really unhappy with clever shortcuts." />
+<meta property="og:description" content="Hooked I admit, I’m having fun with these puzzles. This one looks a little different on the surface. In fact, at first glance, I’m wondering if I can just do the bitwise operations and have it come out right. I don’t use bitwise operations much so I need to go look it up, but also, I’m a little suspicious about what the twist is going to be for the second puzzle. If the second puzzle goes from binary to ternary, or something else odd, then I’ll be really unhappy with clever shortcuts." />
+<link rel="canonical" href="https://assumeforsimplicity.com/detour/2021/12/03/new-puzzle.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/detour/2021/12/03/new-puzzle.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-12-03T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="New Puzzle" />
+<script type="application/ld+json">
+{"description":"Hooked I admit, I’m having fun with these puzzles. This one looks a little different on the surface. In fact, at first glance, I’m wondering if I can just do the bitwise operations and have it come out right. I don’t use bitwise operations much so I need to go look it up, but also, I’m a little suspicious about what the twist is going to be for the second puzzle. If the second puzzle goes from binary to ternary, or something else odd, then I’ll be really unhappy with clever shortcuts.","headline":"New Puzzle","dateModified":"2021-12-03T09:11:34+00:00","datePublished":"2021-12-03T09:11:34+00:00","url":"https://assumeforsimplicity.com/detour/2021/12/03/new-puzzle.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/detour/2021/12/03/new-puzzle.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>New Puzzle</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">3 December 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="hooked">Hooked</h1>
+<p>I admit, I’m having fun with these puzzles. This one looks a little different on the surface. In fact, at first glance, I’m wondering if I can just do the bitwise operations and have it come out right. I don’t use bitwise operations much so I need to go look it up, but also, I’m a little suspicious about what the twist is going to be for the second puzzle. If the second puzzle goes from binary to ternary, or something else odd, then I’ll be really unhappy with clever shortcuts.</p>
+
+<h2 id="binary">Binary</h2>
+<p>I forgot about there not being a nice easy way to get a binary string of ones and zeroes into a real binary value so I went a little different way with the solution to the first puzzle. I just split the initial data set into a column per digit. That’s not a big deal for me since I’m good with regex but I might not have wanted to do it that way if the data input was more friendly to SQL.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="o">#</span><span class="n">bits</span>
+<span class="p">(</span><span class="n">rowNumber</span> <span class="nb">BIGINT</span> <span class="k">IDENTITY</span><span class="p">,</span> <span class="n">a</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">b</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="k">c</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">d</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">e</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">f</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="k">g</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">h</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">i</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">j</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">k</span> <span class="nb">TINYINT</span><span class="p">,</span> <span class="n">l</span> <span class="nb">TINYINT</span><span class="p">)</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">#</span><span class="n">bits</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="k">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+<span class="k">SELECT</span> <span class="o">*</span>
+<span class="k">FROM</span> <span class="p">(</span>
+<span class="k">VALUES</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+	<span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">...</span>
+
+	<span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">t</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="k">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="k">g</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This makes the solution to the first puzzle pretty simple. This query will give all the binary places that need to be added together. I did the adding with a copy of the result and putting plusses between and a select in front, but I could have turned around and declared variables, set them in the select, and then selected the addition of the variables all together. The other half of the first solution is gained by swapping the zero and one in the then/else and repeating the addition. I didn’t close the loop on the pretty closure for the math because I was interested in seeing what the second puzzle was.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="k">AS</span> <span class="n">a</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">AS</span> <span class="n">b</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="k">c</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span> <span class="k">AS</span> <span class="k">c</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span> <span class="k">AS</span> <span class="n">d</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="k">AS</span> <span class="n">e</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="k">AS</span> <span class="n">f</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="k">g</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="k">AS</span> <span class="k">g</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">h</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="k">AS</span> <span class="n">h</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="k">AS</span> <span class="n">i</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">j</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">AS</span> <span class="n">k</span><span class="p">,</span> 
+	<span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span> <span class="k">THEN</span> <span class="mi">1</span> <span class="k">ELSE</span> <span class="mi">0</span> <span class="k">END</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="k">AS</span> <span class="n">l</span>
+<span class="k">FROM</span> <span class="o">#</span><span class="n">bits</span>
+</code></pre></div></div>
+
+<h2 id="oof">Oof</h2>
+<p>Ok, the second puzzle was going to be super simple. But, I read it wrong. I thought I was going to end up with where and, and, and…. Not so. The puzzle doesn’t go for subset of a subset of a subset. It wants a fresh calculation of the bit place each iteration. I feel certain there’s a smarter way to do it, but I’ve got a solution.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DECLARE</span> <span class="o">@</span><span class="n">loop</span> <span class="nb">TINYINT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">--to skip rowNumber</span>
+	<span class="o">@</span><span class="n">currentHighCount</span> <span class="nb">SMALLINT</span><span class="p">,</span>
+	<span class="o">@</span><span class="n">currentRowCount</span> <span class="nb">SMALLINT</span><span class="p">,</span>
+	<span class="o">@</span><span class="k">sql</span> <span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span>
+	<span class="o">@</span><span class="n">RowSet</span> <span class="n">TableOfBigIntegers</span><span class="p">,</span>
+	<span class="o">@</span><span class="n">ParmDefinition</span> <span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span> <span class="o">=</span> <span class="n">N</span><span class="s1">'@rows TableOfBigIntegers READONLY'</span><span class="p">;</span>
+
+<span class="c1">--First, something to loop over, 'cause SQL</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">INTO</span> <span class="o">#</span><span class="n">cols</span> <span class="k">FROM</span> <span class="n">sys</span><span class="p">.</span><span class="n">dm_exec_describe_first_result_set</span><span class="p">(</span><span class="n">N</span><span class="s1">'SELECT TOP 1 * FROM #bits;'</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">--Second initialize the first set limiter</span>
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">RowSet</span> <span class="k">SELECT</span> <span class="n">rowNumber</span> <span class="k">FROM</span> <span class="o">#</span><span class="n">bits</span>
+
+<span class="n">WHILE</span> <span class="k">EXISTS</span><span class="p">(</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">#</span><span class="n">cols</span> <span class="k">WHERE</span> <span class="n">column_ordinal</span> <span class="o">=</span> <span class="o">@</span><span class="n">loop</span><span class="p">)</span>
+<span class="k">BEGIN</span>
+	<span class="c1">--alias the values in the columns to 'val' for reusable code and limit the rows by @RowSet</span>
+	<span class="k">SELECT</span> <span class="o">@</span><span class="k">sql</span> <span class="o">=</span> <span class="n">N</span><span class="s1">'SELECT rowNumber, '</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s1">' AS val 
+					INTO ##workingSet 
+					FROM #bits b 
+					INNER JOIN @rows r ON b.rowNumber = r.val'</span> 
+	<span class="k">FROM</span> <span class="o">#</span><span class="n">cols</span> 
+	<span class="k">WHERE</span> <span class="n">column_ordinal</span> <span class="o">=</span> <span class="o">@</span><span class="n">loop</span> 
+	
+	<span class="k">EXEC</span> <span class="n">sp_executesql</span> <span class="o">@</span><span class="k">sql</span><span class="p">,</span> <span class="o">@</span><span class="n">ParmDefinition</span><span class="p">,</span> <span class="o">@</span><span class="k">rows</span> <span class="o">=</span> <span class="o">@</span><span class="n">RowSet</span><span class="p">;</span>
+
+	<span class="c1">--get the count of rows so I know which is more</span>
+	<span class="k">SELECT</span> <span class="o">@</span><span class="n">currentRowCount</span> <span class="o">=</span> <span class="k">COUNT</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="k">FROM</span> <span class="o">##</span><span class="n">workingSet</span>
+	
+	<span class="c1">--get the number of ones by summing and pick which is most prevalent by more than half the count or not</span>
+	<span class="k">SELECT</span> <span class="o">@</span><span class="n">currentHighCount</span> <span class="o">=</span> <span class="k">CASE</span> <span class="k">WHEN</span> <span class="k">SUM</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="o">@</span><span class="n">currentRowCount</span><span class="o">/</span><span class="mi">2</span> <span class="k">THEN</span> <span class="mi">0</span> <span class="k">ELSE</span> <span class="mi">1</span> <span class="k">END</span>	
+	<span class="k">FROM</span>  <span class="o">##</span><span class="n">workingSet</span> <span class="n">b</span>
+
+	<span class="c1">--empty and reload the row limiter</span>
+	<span class="k">DELETE</span> <span class="o">@</span><span class="n">RowSet</span>
+	<span class="k">INSERT</span> <span class="k">INTO</span> <span class="o">@</span><span class="n">RowSet</span> <span class="k">SELECT</span> <span class="n">rowNumber</span> <span class="k">FROM</span> <span class="o">##</span><span class="n">workingSet</span> <span class="k">WHERE</span> <span class="n">val</span> <span class="o">=</span> <span class="o">@</span><span class="n">currentHighCount</span>
+
+	<span class="n">IF</span> <span class="o">@@</span><span class="n">ROWCOUNT</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+	<span class="k">BEGIN</span>
+		<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="o">#</span><span class="n">bits</span> <span class="n">b</span> <span class="k">INNER</span> <span class="k">JOIN</span> <span class="o">@</span><span class="n">RowSet</span> <span class="n">r</span> <span class="k">ON</span> <span class="n">b</span><span class="p">.</span><span class="n">rowNumber</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="n">val</span>
+		<span class="n">BREAK</span>
+	<span class="k">END</span>
+
+	<span class="k">SET</span> <span class="o">@</span><span class="n">loop</span> <span class="o">=</span> <span class="o">@</span><span class="n">loop</span> <span class="o">+</span> <span class="mi">1</span>
+	<span class="k">DROP</span> <span class="k">TABLE</span> <span class="o">##</span><span class="n">workingSet</span>
+<span class="k">END</span>
+
+<span class="k">DROP</span> <span class="k">TABLE</span> <span class="o">#</span><span class="n">cols</span>
+</code></pre></div></div>
+
+<p>Er, well, I almost have a solution. I have a bug somewhere because I’m not getting the right answer. I get single rows of bits for both of the pieces (swap the 1 and 0 for the other) and I put together a fast multiplier/summer. But it’s not right yet. Maybe tomorrow, sleep now.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="k">sum</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="k">FROM</span> <span class="p">(</span>
+<span class="k">VALUES</span>
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">)),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)),</span> 
+	<span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">0</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="p">),</span> 
+	<span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="n">POWER</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">)</span>
+<span class="p">)</span> <span class="n">t</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div></div>
+
+
+
+  <small>tags: <em>code</em> - <em>sql</em> - <em>fun</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/detour/2021/12/02/detour.html">&#8672;&nbsp;Detour</a>
+      
+    </p>
+    <p>
+      
+      <a href="/detour/2021/12/04/checking-work.html">Debugging&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

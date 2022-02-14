@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>Website Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Website Notes | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Website Notes" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Consolidation I’m also pulling together the notes on how hte website and ci/cd is set up. Sixteen posts and maybe, hopefully, finished with messing with the website for a while." />
+<meta property="og:description" content="Consolidation I’m also pulling together the notes on how hte website and ci/cd is set up. Sixteen posts and maybe, hopefully, finished with messing with the website for a while." />
+<link rel="canonical" href="https://assumeforsimplicity.com/permalink/website-setup" />
+<meta property="og:url" content="https://assumeforsimplicity.com/permalink/website-setup" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-16T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Website Notes" />
+<script type="application/ld+json">
+{"description":"Consolidation I’m also pulling together the notes on how hte website and ci/cd is set up. Sixteen posts and maybe, hopefully, finished with messing with the website for a while.","headline":"Website Notes","dateModified":"2021-10-16T09:11:34+00:00","datePublished":"2021-10-16T09:11:34+00:00","url":"https://assumeforsimplicity.com/permalink/website-setup","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/permalink/website-setup"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>Website Notes</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">16 October 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="consolidation">Consolidation</h1>
+<p>I’m also pulling together the notes on how hte website and ci/cd is set up. Sixteen posts and maybe, hopefully, finished with messing with the website for a while.</p>
+
+<h2 id="github-pages">GitHub Pages</h2>
+<p>There are two types of <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages">GitHub Pages</a> sites that I’m working with. I have a Project <a href="https://assumeforsimplicity.com/roguelike-tutorial/">site</a> which is set up from this <a href="https://github.com/jr101dallas/roguelike-tutorial">repo</a> and a User site which publishes from a specially named <a href="https://github.com/jr101dallas/jr101dallas.github.io">repository</a> with a format of <code class="language-plaintext highlighter-rouge">&lt;username&gt;.github.io</code> which I have publishing and can be viewed at <a href="https://assumeforsimplicity.com">assumeforsimplicity.com</a>. The Project site appears at the subdirectory <code class="language-plaintext highlighter-rouge">/roguelike-tutorial/</code> of my main site and I’ve done a little work to make it look seamlessly part of my main site.</p>
+
+<p>A large part of my site is built from the Quickstart and Tutorials in the <a href="https://jekyllrb.com/docs/">Jekyll docs</a>. But, I’ve found a number of places where I got confused or made mistakes and things didn’t work, or I had certain requirements that weren’t met by the basics there.</p>
+
+<h4 id="source">Source</h4>
+<p>One place I got tripped up between GitHub Pages types and different repository setups is the Souce setting in the repository Settings &gt; Pages section. Here’s how to tell what you need.</p>
+<ul>
+  <li>You want your website source at the root of the repository.
+    <ul>
+      <li>select <code class="language-plaintext highlighter-rouge">/ (root)</code></li>
+    </ul>
+  </li>
+  <li>You want “other” things going on in your repository, not just the website.
+    <ul>
+      <li>create first, then select the subfolder where you’re going to keep the jekyll <code class="language-plaintext highlighter-rouge">_config.yml</code> the <code class="language-plaintext highlighter-rouge">CNAME</code> file and other website root elements.<br />
+With the second option, you can keep whatever crazy train stuff in your root directory that you want and the website source files won’t be confused with that stuff. In both cases, select the Branch you want GitHub to run the automatic Build and Publish on. More on the branch setting under GitHub Actions below.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="custom-domain">Custom Domain</h4>
+<p>Another place I got tripped up is teh Custom Domain setting. When you set it the first time, GitHub helps you create a <code class="language-plaintext highlighter-rouge">CNAME</code> file. The thing is, the <code class="language-plaintext highlighter-rouge">CNAME</code> file <strong>IS</strong> the setting. It’s a nice wizard clicky bit, but the <code class="language-plaintext highlighter-rouge">CNAME</code> file is the real deal. That means that if you change it or delete it, or change the Source (see above) folder or branch to someplace where the <code class="language-plaintext highlighter-rouge">CNAME</code> file isn’t in the root of that setting, then your Custom Domain setting is lost! This becomes more important below when I get into GitHub Actions.</p>
+
+<h2 id="github-actions">GitHub Actions</h2>
+<p>Depending on what you’re doing with GitHub Pages and what your activity cycle is with your repository, you might not need any GitHub Actions configured. The reason for this is that there’s a vanilla and automatic GitHub Pages build and publish workflow that triggers whenever your selected branch has a new commit. This could be you force pushing to it, merging a PR, whatever. This vanilla build and publish is the limited Jekyll build with certain whtelisted ruby plugins. It’s an awesome way for people to get their website up and running immediately.</p>
+
+<h4 id="workflow">Workflow</h4>
+<p>Special cases that have requirements outside the whitelisted plugins or, in my case, a need to decouple my coding activity schedule from my website’s build and publish schedule, will need a workflow in GitHub Actions. In the Jekyll docs, there is a <a href="https://jekyllrb.com/docs/continuous-integration/github-actions/">section</a> with good information on a workflow that does a custom Jekyll build and publish. When I was working through it, there was a little confusion between <code class="language-plaintext highlighter-rouge">main</code> and <code class="language-plaintext highlighter-rouge">master</code> which is the old deprecated <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<h4 id="workflow-source-vs-github-pages-source">Workflow Source vs. GitHub Pages Source</h4>
+<p>The basic idea is that there is a <strong>source</strong> branch for the workflow, and a <strong>destination</strong> branch for the workflow, and in the doc there they are using <code class="language-plaintext highlighter-rouge">main</code> for the <strong>source</strong> of the workflow and ```gh-pages`` for the destination of the workflow. The reason I’m trying to be specific here is that this is not the same as the Source setting in your repository Settings &gt; Pages and that should probably be set to the <strong>destination</strong> of the workflow unless you’re doing something more complicated than I’m doing.</p>
+
+<h4 id="workflow-breaking-custom-domain">Workflow Breaking Custom Domain</h4>
+<p>Above in the Custom Domain section I mention that changing the Pages &gt; Source setting can break your Custom Domain setting unless you move the <code class="language-plaintext highlighter-rouge">CNAME</code> file to match the root of the new setting. Watch for this when you are configuring a workflow! You can solve it a few ways. One way that I failed to have work is to create the <code class="language-plaintext highlighter-rouge">CNAME</code> in the workflow destination and set up the workflow not to clear the destination before commiting the new files. Another way that I did get to work easily is to configure the workflow to copy the <code class="language-plaintext highlighter-rouge">CNAME</code> file from the source to the destination. I already had the <code class="language-plaintext highlighter-rouge">CNAME</code> file commited in <code class="language-plaintext highlighter-rouge">main</code> anyway and adding the include to the Jekyll <code class="language-plaintext highlighter-rouge">_config.yml</code> worked out great.</p>
+
+
+
+
+  <small>tags: <em>plan</em> - <em>tutorial</em> - <em>breadcrumbs</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/roguelike/2021/10/15/summary.html">&#8672;&nbsp;Summary</a>
+      
+    </p>
+    <p>
+      
+      <a href="/roguelike/2021/10/17/ecs-planning.html">ECS Planning&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

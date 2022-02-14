@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>Understanding Actions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Understanding Actions | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Understanding Actions" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Got It I have indeed been thinking about all of this incorrectly. Like when I was having confusion about the /doc folder, I just didn’t get what was going on." />
+<meta property="og:description" content="Got It I have indeed been thinking about all of this incorrectly. Like when I was having confusion about the /doc folder, I just didn’t get what was going on." />
+<link rel="canonical" href="https://assumeforsimplicity.com/website/2021/10/06/understanding-actions.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/website/2021/10/06/understanding-actions.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-10-06T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Understanding Actions" />
+<script type="application/ld+json">
+{"description":"Got It I have indeed been thinking about all of this incorrectly. Like when I was having confusion about the /doc folder, I just didn’t get what was going on.","headline":"Understanding Actions","dateModified":"2021-10-06T09:11:34+00:00","datePublished":"2021-10-06T09:11:34+00:00","url":"https://assumeforsimplicity.com/website/2021/10/06/understanding-actions.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/website/2021/10/06/understanding-actions.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>Understanding Actions</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">6 October 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="got-it">Got It</h1>
+<p>I have indeed been thinking about all of this incorrectly. Like when I was having confusion about the <code class="language-plaintext highlighter-rouge">/doc</code> folder, I just didn’t get what was going on.</p>
+
+<h2 id="source-setting">Source Setting</h2>
+<p>The GitHub Pages settings literally are looking for the source folder to build and publish from. Duh, right? But, the part that I wasn’t thinking about correctly, is this: That’s the folder that the vanilla GitHub Pages build and publish runs from. Good so far, right, but not enlightening yet. The GitHub Actions workflow Jekyll, yes, is doing a build and publish, but it’s doing preprocessing to handle anything custom you need beyond the vanilla default and checks in to the target branch in order to trigger the vanilla one. Putting it another way, you can’t change, configure, hijack, the vanilla GitHub Pages build and publish on checkin. What you CAN do is set up a GitHub Action for Jekyll with a schedule trigger to preprocess your real source into the source branch and folder that the vanilla build and publish then picks up. There are TWO build and publish actions happening in my repository now. The one that I’ve had all the excitement trying to figure out, and the vanilla one that is still running.</p>
+
+<h2 id="landing">Landing</h2>
+<p>Where I’ve landed is this. My <code class="language-plaintext highlighter-rouge">main</code> branch is where I work and check in changes. Trunk based development, all good there. My GitHub Action is configured to pull from <code class="language-plaintext highlighter-rouge">main</code> and to publish to <code class="language-plaintext highlighter-rouge">target_branch: 'gh-pages'</code> which I found when I looked at the <a href="https://github.com/marketplace/actions/jekyll-actions">source</a> for the action linked at the bottom of the Jekyll doc page. So now it’s not doing strange things with <code class="language-plaintext highlighter-rouge">master</code> anymore. AND, I had to change the source setting in the GitHub Pages settings to point at <code class="language-plaintext highlighter-rouge">gh-pages</code> so that, when the GitHub Action runs, it builds and publishes by checking in changes to the <code class="language-plaintext highlighter-rouge">gh-pages</code> branch and that checkin is the trigger that sets off the vanilla GitHub Pages build and publish which then shows up properly and on schedule on <a href="https://assumeforsimplicity.com">assumeforsimplicity.com</a>. Totally simple, right….</p>
+
+
+
+
+  <small>tags: <em>workflow</em> - <em>pages</em> - <em>actions</em> - <em>jekyll</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/website/2021/10/05/actions-rewrite.html">&#8672;&nbsp;Actions Rewrite</a>
+      
+    </p>
+    <p>
+      
+      <a href="/website/2021/10/07/cname-record.html">CNAME Record&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>Hit Points</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Hit Points | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Hit Points" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Damage The first place we’re headed is health, damage, and bonuses. It’s the closest parallel for the Aim classes and code, so this will probably go fairly quickly at first. That might afford me a change to pay more attention to the overall shape of the code and the logic flow while I work and maybe I can get in some cleanup." />
+<meta property="og:description" content="Damage The first place we’re headed is health, damage, and bonuses. It’s the closest parallel for the Aim classes and code, so this will probably go fairly quickly at first. That might afford me a change to pay more attention to the overall shape of the code and the logic flow while I work and maybe I can get in some cleanup." />
+<link rel="canonical" href="https://assumeforsimplicity.com/roguelike/2021/11/14/hit-points.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/roguelike/2021/11/14/hit-points.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-14T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Hit Points" />
+<script type="application/ld+json">
+{"description":"Damage The first place we’re headed is health, damage, and bonuses. It’s the closest parallel for the Aim classes and code, so this will probably go fairly quickly at first. That might afford me a change to pay more attention to the overall shape of the code and the logic flow while I work and maybe I can get in some cleanup.","headline":"Hit Points","dateModified":"2021-11-14T09:11:34+00:00","datePublished":"2021-11-14T09:11:34+00:00","url":"https://assumeforsimplicity.com/roguelike/2021/11/14/hit-points.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/roguelike/2021/11/14/hit-points.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>Hit Points</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">14 November 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="damage">Damage</h1>
+<p>The first place we’re headed is health, damage, and bonuses. It’s the closest parallel for the Aim classes and code, so this will probably go fairly quickly at first. That might afford me a change to pay more attention to the overall shape of the code and the logic flow while I work and maybe I can get in some cleanup.</p>
+
+<h2 id="health">Health</h2>
+<p>It seems like an int for health, a total of hit points, punishment that the Entity can take, is an easy implementation and not totally ridiculous concept, so, we start by mimicing Aim. Then Aim needs some updating. I’ll think about the name, but it’s basically the place where I want attack origination stats to live so it gets the BaseDamage int. Actually, I think I’ve just decided on Offense and Defense. Offense gets all the stats related to initiating an attack and Defense gets everything related to taking a hit and maybe not being removed from play.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="k">class</span> <span class="nc">Defense</span> <span class="p">:</span> <span class="n">IComponent</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">BaseHealth</span> <span class="p">=</span> <span class="m">50</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">class</span> <span class="nc">Offense</span> <span class="p">:</span> <span class="n">IComponent</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">BaseAim</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+        <span class="k">public</span> <span class="k">readonly</span> <span class="kt">int</span> <span class="n">BaseDamage</span> <span class="p">=</span> <span class="m">5</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="unit-test-value">Unit Test Value</h2>
+<p>And there’s a big part of the reason for unit tests. I renamed a class and then got rid of errors, but that’s not enough to prevent bugs.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Test</span> <span class="n">Run</span> <span class="n">Failed</span><span class="p">.</span>
+<span class="n">Total</span> <span class="n">tests</span><span class="p">:</span> <span class="m">24</span>
+     <span class="n">Passed</span><span class="p">:</span> <span class="m">22</span>
+     <span class="n">Failed</span><span class="p">:</span> <span class="m">2</span>
+</code></pre></div></div>
+
+<p>Magic strings, causing a problem. I have some other renaming still to do, though I’m leaving BaseAim the same. But it’s definitely time to work in a Component Type Enum. I’m assigning values to the enum members because I expect the list to grow and I have a slight preference for the members in alpha order and not to change values of the members. It might technically not matter, but it’s also only another 10-20 keystrokes…</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="k">enum</span> <span class="n">ComponentType</span>
+    <span class="p">{</span>
+        <span class="n">Unknown</span> <span class="p">=</span> <span class="m">0</span><span class="p">,</span>
+        <span class="n">Component</span> <span class="p">=</span> <span class="m">10</span><span class="p">,</span>
+        <span class="n">Defense</span> <span class="p">=</span> <span class="m">20</span><span class="p">,</span>
+        <span class="n">Inventory</span> <span class="p">=</span> <span class="m">30</span><span class="p">,</span>
+        <span class="n">Offense</span> <span class="p">=</span> <span class="m">40</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+
+<p>I’ll have to catch the rest of this up later, but at the momemnt at least some refactoring is complete and tests are passing.</p>
+
+
+
+  <small>tags: <em>code</em> - <em>component</em> - <em>health</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/roguelike/2021/11/13/next-steps.html">&#8672;&nbsp;Next Steps</a>
+      
+    </p>
+    <p>
+      
+      <a href="/roguelike/2021/11/15/back-to-hp.html">Back To HP&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>

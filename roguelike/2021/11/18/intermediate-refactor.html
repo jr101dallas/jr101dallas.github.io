@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <title>Intermediate Refactor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/assets/css/style.css?v=2caa0aad044a3b83b4d652639794266fe94766b9">
+    <link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link type="application/atom+xml" rel="alternate" href="https://assumeforsimplicity.com/feed.xml" title="Assume For Simplicity" />
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Intermediate Refactor | Assume For Simplicity</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Intermediate Refactor" />
+<meta name="author" content="jr101dallas" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Halfway I fell like I’m not finished in any way, but maybe hit a decent point for a pause. I still don’t like several of my methods, but I’m closer." />
+<meta property="og:description" content="Halfway I fell like I’m not finished in any way, but maybe hit a decent point for a pause. I still don’t like several of my methods, but I’m closer." />
+<link rel="canonical" href="https://assumeforsimplicity.com/roguelike/2021/11/18/intermediate-refactor.html" />
+<meta property="og:url" content="https://assumeforsimplicity.com/roguelike/2021/11/18/intermediate-refactor.html" />
+<meta property="og:site_name" content="Assume For Simplicity" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-11-18T09:11:34+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Intermediate Refactor" />
+<script type="application/ld+json">
+{"description":"Halfway I fell like I’m not finished in any way, but maybe hit a decent point for a pause. I still don’t like several of my methods, but I’m closer.","headline":"Intermediate Refactor","dateModified":"2021-11-18T09:11:34+00:00","datePublished":"2021-11-18T09:11:34+00:00","url":"https://assumeforsimplicity.com/roguelike/2021/11/18/intermediate-refactor.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://assumeforsimplicity.com/roguelike/2021/11/18/intermediate-refactor.html"},"author":{"@type":"Person","name":"jr101dallas"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+        <nav>
+    
+      <a href="/" >
+        Home
+      </a>
+    
+      <a href="/posts/" >
+        Posts
+      </a>
+    
+      <a href="/breadcrumbs/" >
+        Breadcrumbs
+      </a>
+    
+      <a href="/roguelike-tutorial/" >
+        Roguelike
+      </a>
+    
+      <a href="/about/" >
+        About
+      </a>
+    
+  </nav>
+        <header>
+          <h1>Intermediate Refactor</h1>
+          <h2>Manage Time, Software, and Business, Easily  </h2>
+        </header>
+        <section id="downloads" class="clearfix">
+          
+	
+        </section>
+        <hr>
+        <section id="main_content">
+          <p class="view">18 November 2021 by jr101dallas</p>
+<a href="/posts/">&#8672;&nbsp;Back to Posts</a>
+
+
+<h1 id="halfway">Halfway</h1>
+<p>I fell like I’m not finished in any way, but maybe hit a decent point for a pause. I still don’t like several of my methods, but I’m closer.</p>
+
+<h2 id="extension-methods">Extension Methods</h2>
+<p>The main thing that I’ve done is moved some logic into better locations. I’ve created extension methods on my new OffenseMods and on Entity.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Add</span><span class="p">(</span><span class="k">this</span> <span class="n">OffenseMods</span> <span class="n">addend1</span><span class="p">,</span> <span class="n">OffenseMods</span> <span class="n">addend2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">addend1</span><span class="p">.</span><span class="n">totalAim</span> <span class="p">+=</span> <span class="n">addend2</span><span class="p">.</span><span class="n">totalAim</span><span class="p">;</span>
+            <span class="n">addend1</span><span class="p">.</span><span class="n">totalDamage</span> <span class="p">+=</span> <span class="n">addend2</span><span class="p">.</span><span class="n">totalDamage</span><span class="p">;</span>   
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Add</span><span class="p">(</span><span class="k">this</span> <span class="n">OffenseMods</span> <span class="n">addend1</span><span class="p">,</span> <span class="n">IItem</span> <span class="n">addend2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">addend2</span> <span class="k">is</span> <span class="n">IOffenseMods</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">modItem</span> <span class="p">=</span> <span class="p">(</span><span class="n">IOffenseMods</span><span class="p">)</span><span class="n">addend2</span><span class="p">;</span>
+                <span class="kt">var</span> <span class="n">mods</span> <span class="p">=</span> <span class="n">modItem</span><span class="p">.</span><span class="nf">GetOffenseModifiers</span><span class="p">();</span>
+                <span class="n">addend1</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">mods</span><span class="p">);</span>                    
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Add</span><span class="p">(</span><span class="k">this</span> <span class="n">OffenseMods</span> <span class="n">addend1</span><span class="p">,</span> <span class="n">Offense</span> <span class="n">addend2</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">addend1</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">addend2</span><span class="p">.</span><span class="nf">ToOffenseMods</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">HasDefense</span><span class="p">(</span><span class="k">this</span> <span class="n">Entity</span> <span class="n">target</span><span class="p">,</span> <span class="k">out</span> <span class="n">Defense</span> <span class="n">defCom</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">bool</span> <span class="n">foundDefense</span> <span class="p">=</span> <span class="nf">HasComponent</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">ComponentType</span><span class="p">.</span><span class="n">Defense</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">defICom</span><span class="p">);</span>
+            <span class="n">defCom</span> <span class="p">=</span> <span class="p">(</span><span class="n">Defense</span><span class="p">)</span><span class="n">defICom</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">foundDefense</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">HasInventory</span><span class="p">(</span><span class="k">this</span> <span class="n">Entity</span> <span class="n">origin</span><span class="p">,</span> <span class="k">out</span> <span class="n">Inventory</span> <span class="n">offCom</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">bool</span> <span class="n">foundInventory</span> <span class="p">=</span> <span class="nf">HasComponent</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">ComponentType</span><span class="p">.</span><span class="n">Inventory</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">invICom</span><span class="p">);</span>
+            <span class="n">offCom</span> <span class="p">=</span> <span class="p">(</span><span class="n">Inventory</span><span class="p">)</span><span class="n">invICom</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">foundInventory</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">HasOffense</span><span class="p">(</span><span class="k">this</span> <span class="n">Entity</span> <span class="n">origin</span><span class="p">,</span> <span class="k">out</span> <span class="n">Offense</span> <span class="n">offCom</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">bool</span> <span class="n">foundOffense</span> <span class="p">=</span> <span class="nf">HasComponent</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">ComponentType</span><span class="p">.</span><span class="n">Offense</span><span class="p">,</span> <span class="k">out</span> <span class="kt">var</span> <span class="n">offICom</span><span class="p">);</span>
+            <span class="n">offCom</span> <span class="p">=</span> <span class="p">(</span><span class="n">Offense</span><span class="p">)</span><span class="n">offICom</span><span class="p">;</span>
+            <span class="k">return</span> <span class="n">foundOffense</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">HasComponent</span><span class="p">(</span><span class="k">this</span> <span class="n">Entity</span> <span class="n">entity</span><span class="p">,</span> <span class="n">ComponentType</span> <span class="n">type</span><span class="p">,</span> <span class="k">out</span> <span class="n">IComponent</span> <span class="n">component</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">entity</span><span class="p">.</span><span class="n">components</span><span class="p">.</span><span class="nf">TryGetValue</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="k">out</span> <span class="n">component</span><span class="p">);;</span>
+        <span class="p">}</span>
+</code></pre></div></div>
+
+<p>That shortens up some of Target pretty well.</p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="k">public</span> <span class="k">void</span> <span class="nf">TargetEntity</span><span class="p">(</span><span class="n">Entity</span> <span class="n">originEntity</span><span class="p">,</span> <span class="n">Entity</span> <span class="n">targetEntity</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(!</span><span class="n">targetEntity</span><span class="p">.</span><span class="nf">HasDefense</span><span class="p">(</span><span class="k">out</span> <span class="kt">var</span> <span class="n">defenseComponent</span><span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+
+            <span class="kt">var</span> <span class="n">offenseMods</span> <span class="p">=</span> <span class="nf">GetEntityOffenseModifiers</span><span class="p">(</span><span class="n">originEntity</span><span class="p">);</span>
+            <span class="kt">var</span> <span class="n">num</span> <span class="p">=</span> <span class="n">_rand</span><span class="p">.</span><span class="nf">Next</span><span class="p">(</span><span class="m">100</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="p">+</span> <span class="n">offenseMods</span><span class="p">.</span><span class="n">totalAim</span> <span class="p">&gt;</span> <span class="m">50</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">defenseComponent</span><span class="p">.</span><span class="n">CurrentHealth</span> <span class="p">-=</span> <span class="n">offenseMods</span><span class="p">.</span><span class="n">totalDamage</span><span class="p">;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">defenseComponent</span><span class="p">.</span><span class="n">CurrentHealth</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">$"Entity </span><span class="p">{</span><span class="n">targetEntity</span><span class="p">.</span><span class="n">Id</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()}</span><span class="s"> has been removed from play!"</span><span class="p">);</span>
+                    <span class="n">_unv</span><span class="p">.</span><span class="n">entities</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="n">targetEntity</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">OffenseMods</span> <span class="nf">GetEntityOffenseModifiers</span><span class="p">(</span><span class="n">Entity</span> <span class="n">entity</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">offenseMods</span> <span class="p">=</span> <span class="nf">GetOffenseModifiers</span><span class="p">(</span><span class="n">entity</span><span class="p">);</span>
+            <span class="n">offenseMods</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="nf">GetInventoryOffenseModifiers</span><span class="p">(</span><span class="n">entity</span><span class="p">));</span>
+            <span class="k">return</span> <span class="n">offenseMods</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">OffenseMods</span> <span class="nf">GetOffenseModifiers</span><span class="p">(</span><span class="n">Entity</span> <span class="n">entity</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">offenseMods</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">OffenseMods</span><span class="p">();</span>
+            
+            <span class="k">if</span> <span class="p">(!</span><span class="n">entity</span><span class="p">.</span><span class="nf">HasOffense</span><span class="p">(</span><span class="k">out</span> <span class="kt">var</span> <span class="n">offenseComponent</span><span class="p">))</span> <span class="k">return</span> <span class="n">offenseMods</span><span class="p">;</span>
+
+            <span class="n">offenseMods</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">offenseComponent</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="n">offenseMods</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">OffenseMods</span> <span class="nf">GetInventoryOffenseModifiers</span><span class="p">(</span><span class="n">Entity</span> <span class="n">entity</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">offenseMods</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">OffenseMods</span><span class="p">();</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">entity</span><span class="p">.</span><span class="nf">HasInventory</span><span class="p">(</span><span class="k">out</span> <span class="kt">var</span> <span class="n">inventoryComponent</span><span class="p">))</span>
+            <span class="p">{</span>
+                <span class="k">foreach</span><span class="p">(</span><span class="n">IItem</span> <span class="n">item</span> <span class="k">in</span> <span class="n">inventoryComponent</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="n">Values</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">offenseMods</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>                    
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">offenseMods</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="n">OffenseMods</span> <span class="nf">GetItemOffenseModifiers</span><span class="p">(</span><span class="n">Inventory</span> <span class="n">inv</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">offenseMods</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">OffenseMods</span><span class="p">();</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="n">IItem</span> <span class="n">item</span> <span class="k">in</span> <span class="n">inv</span><span class="p">.</span><span class="n">items</span><span class="p">.</span><span class="n">Values</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">offenseMods</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>                    
+            <span class="p">}</span>
+
+            <span class="k">return</span> <span class="n">offenseMods</span><span class="p">;</span>
+        <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="inventory-and-item">Inventory and Item</h2>
+<p>I’m not where I want to be with GetInventoryOffenseModifiers and GetItem0OffenseModifiers yet but the tests are passing and I need to stop for a bit.</p>
+
+
+
+  <small>tags: <em>plan</em> - <em>item</em> - <em>defense</em></small>
+
+
+<p>
+  <div class="post-nav">
+    <p>
+      
+      <a href="/roguelike/2021/11/17/adding-models.html">&#8672;&nbsp;Adding Models</a>
+      
+    </p>
+    <p>
+      
+      <a href="/roguelike/2021/11/19/extension-tests.html">Extension Tests&nbsp;&#8674;</a>
+      
+    </p>
+  </div>
+</p>
+        </section>
+
+        <footer>
+        
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.
+        </footer>
+
+      </div>
+    </div>
+
+    
+  </body>
+</html>
